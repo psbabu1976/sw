@@ -8,7 +8,10 @@ app.use(express.static(__dirname + '/client'));
 app.get("/", (req, res) => {
     res.send("Hi");
 })
-const vapidKeys = webpush.generateVAPIDKeys();
+const vapidKeys = {
+    publicKey: 'BFy0aubAVXuK55veGHqa4tSLv_yy6j2xWOLrIXVtwLZ6Y-UcyE2Ps3oR2lH-aBTUuAeGqWpsqt-ZfSsIpoIjpmk',
+    privateKey: 'kSfduG99V_3XyYxOvsmXgG510Zcn9UbfVOVfVs01imA'
+  };
 console.log(vapidKeys);
 //webpush.setGCMAPIKey('suman');
 webpush.setVapidDetails(
