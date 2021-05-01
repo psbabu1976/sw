@@ -1,5 +1,6 @@
 self.addEventListener("push", e=>{
-  self.registration.showNotification("AMMA", {body:'From Suman'});
+  console.log(e)
+  self.registration.showNotification(e.data.text(), {body:'From Suman'});
 })
 // self.addEventListener('push', function(e) {
 //     var options = {

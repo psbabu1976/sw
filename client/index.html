@@ -1,4 +1,6 @@
 <h1>Hello</h1>
+<input type="text" id="msg" />
+<button onclick="send()">Send</button>
 <script>
     alert(143);
     const subscription = {
@@ -17,18 +19,20 @@
             let push = await swr.pushManager.subscribe(subscription)
             console.log(JSON.stringify(push));
 
-            // fetch('/subscribe', {
-            //         method: 'post',
-            //         body: JSON.stringify(push),
-            //         headers: {
-            //             'content-Type': 'application/json'
-            //         }
-            //     }).then(res => data = res.json()).then(data => console.log(data))
-            //     .catch(err => console.log(err))
+           
         })
 
     }
-
+    function send(){
+        fetch('/subscribe', {
+                    method: 'post',
+                    body: JSON.stringify({msg:document.getElementById('msg').value}),
+                    headers: {
+                        'content-Type': 'application/json'
+                    }
+                }).then(res => data = res.json()).then(data => console.log(data))
+                .catch(err => console.log(err))
+    }
     function arrayBufferToBase64(buffer) {
         let binary = '';
         let bytes = new Uint16Array(buffer);

@@ -37,17 +37,19 @@ const payload = JSON.stringify({
     msg: 'Hi how are you??'
 });
 app.post("/subscribe", (req, res) => {
+    console.log('Got a hit', req.url);
     const payload = JSON.stringify({
         msg: 'Hi how are you??'
     });
-    console.log(req.body)
+    //console.log(req.body)
 
-    webpush.sendNotification(body, payload);
+    webpush.sendNotification(body, req.body.msg)
+    .catch(err => console.log(err));
     //res.send(req.body)
 
 })
-webpush.sendNotification(body, 'tada')
-    .catch(err => console.log(err))
+// webpush.sendNotification(body, 'tada')
+//     .catch(err => console.log(err))
 // This is the same output of calling JSON.stringify on a PushSubscription
 // const pushSubscription = {
 //     endpoint: 'https://....',
