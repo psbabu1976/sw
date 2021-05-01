@@ -8,10 +8,11 @@ app.use(express.static(__dirname + '/client'));
 app.get("/", (req, res) => {
     res.send("Hi");
 })
-const vapidKeys = {
-    publicKey: 'BFy0aubAVXuK55veGHqa4tSLv_yy6j2xWOLrIXVtwLZ6Y-UcyE2Ps3oR2lH-aBTUuAeGqWpsqt-ZfSsIpoIjpmk',
-    privateKey: 'kSfduG99V_3XyYxOvsmXgG510Zcn9UbfVOVfVs01imA'
-  };
+let vapidKeys = {
+    publicKey: 'BJuxdzueLrrEIdtmmbFN6x5VA0qTvhzr10rgqgpVrcLzZ6cDnO1deUDkj-ptvJ0k8-4r7UvN6mWgK0dJBDP7b80',
+    privateKey: '9oSwDKpcs2zx0xq0Q0DgKdoQRX3FEMfl0AiX2xVPSsA'
+  }
+//vapidKeys = webpush.generateVAPIDKeys();
 console.log(vapidKeys);
 //webpush.setGCMAPIKey('suman');
 webpush.setVapidDetails(
@@ -20,13 +21,18 @@ webpush.setVapidDetails(
     vapidKeys.privateKey
 );
 const body = {
-    endpoint: "https://fcm.googleapis.com/fcm/send/dOx2qRwOJ0E:APA91bE3GFk50Fwhje6RzGfpCd3BXy1k8NbMY60GV5dZ9niDBaElheSBczVAmYfAkSwzIZ8xGWgou875ze2AIHcE5F1av_bT-Ibs59CerbXzy0SNHLum9NphQaMLp1OjM1OvoUzSjZ8G",
-    expirationTime: null,
-    keys: {
-        p256dh: "BEq6Uz992wXYi5mup-adfzPsBAnY2uffI1turCzg73IWuO25Eh1_ktZyAhhdSR3BxhYWJWCwqJBBJz9SExMXnRs",
-        auth: "GK4B2qaiMgE9MhO3kILIwQ"
+    "endpoint": "https://fcm.googleapis.com/fcm/send/cVkpM78Jnic:APA91bEvB3_EpdgDv3c4wGfSsafxqVlExGgmnplKnCg9i-RsPgAt1OV8zW055mVQCURRhKk2c8gaXXgfQvFXzEXxLKI-5rUTx7TEmQIns1D3HeWryz5SItcqh5FdAa5XWdXuSVnQ4MD4",
+    "expirationTime": null,
+    "keys": {
+        "p256dh": "BEkc2az2MaxNl6SpE0gV9zcXfh1mc1M0dGWCWcp96s2ux7YGCKBJjW27MluT7gWcx954agrvNdtTzU_5IT2rFWU",
+        "auth": "o5-8FefwMyfJ1pQVR7X4Vg"
     }
 }
+// headers:{
+//     method:'post',
+//     'content-type': 'application/json'
+// }
+
 const payload = JSON.stringify({
     msg: 'Hi how are you??'
 });
@@ -40,7 +46,8 @@ app.post("/subscribe", (req, res) => {
     //res.send(req.body)
 
 })
-webpush.sendNotification(body, payload);
+webpush.sendNotification(body, 'tada')
+    .catch(err => console.log(err))
 // This is the same output of calling JSON.stringify on a PushSubscription
 // const pushSubscription = {
 //     endpoint: 'https://....',
