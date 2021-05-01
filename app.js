@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 let vapidKeys = {
     publicKey: 'BJuxdzueLrrEIdtmmbFN6x5VA0qTvhzr10rgqgpVrcLzZ6cDnO1deUDkj-ptvJ0k8-4r7UvN6mWgK0dJBDP7b80',
     privateKey: '9oSwDKpcs2zx0xq0Q0DgKdoQRX3FEMfl0AiX2xVPSsA'
-  }
+}
 //vapidKeys = webpush.generateVAPIDKeys();
 console.log(vapidKeys);
 //webpush.setGCMAPIKey('suman');
@@ -21,11 +21,11 @@ webpush.setVapidDetails(
     vapidKeys.privateKey
 );
 const body = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/cVkpM78Jnic:APA91bEvB3_EpdgDv3c4wGfSsafxqVlExGgmnplKnCg9i-RsPgAt1OV8zW055mVQCURRhKk2c8gaXXgfQvFXzEXxLKI-5rUTx7TEmQIns1D3HeWryz5SItcqh5FdAa5XWdXuSVnQ4MD4",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/dBGnDCUFpYw:APA91bGjslo0wIz0YxpXHsbwPSmwmK-a9xQ9QPZkXzQopKj3LWtHrJ6Lt0GiKuCabJ1tUYvvkB64jCb5-vBWimSamBcUa9QWcpKauIjCi0GuJaBqBbhgAmcVq2Jhx_4ozZEz_aGHmNqc",
     "expirationTime": null,
     "keys": {
-        "p256dh": "BEkc2az2MaxNl6SpE0gV9zcXfh1mc1M0dGWCWcp96s2ux7YGCKBJjW27MluT7gWcx954agrvNdtTzU_5IT2rFWU",
-        "auth": "o5-8FefwMyfJ1pQVR7X4Vg"
+        "p256dh": "BOS9lOxRtE0ciHk2r7UJBZv2evG5JezCn8gJ2vjlULn1NH9jCxss6lTgbRobsFKFBQA2yqOrB56np1BHPcmVdWA",
+        "auth": "yZSkgvcuhOl7V6RaDKyLNg"
     }
 }
 // headers:{
