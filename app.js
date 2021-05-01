@@ -36,7 +36,7 @@ const body = {
 const payload = JSON.stringify({
     msg: 'Hi how are you??'
 });
-app.post("/subscribe", (req, res) => {
+app.post("http://localhost:3000/subscribe", (req, res) => {
     console.log('Got a hit', req.url);
     const payload = JSON.stringify({
         msg: 'Hi how are you??'
