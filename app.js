@@ -20,11 +20,11 @@ webpush.setVapidDetails(
     vapidKeys.privateKey
 );
 const body = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/dOx2qRwOJ0E:APA91bE3GFk50Fwhje6RzGfpCd3BXy1k8NbMY60GV5dZ9niDBaElheSBczVAmYfAkSwzIZ8xGWgou875ze2AIHcE5F1av_bT-Ibs59CerbXzy0SNHLum9NphQaMLp1OjM1OvoUzSjZ8G",
-    "expirationTime": null,
-    "keys": {
-        "p256dh": "BEq6Uz992wXYi5mup-adfzPsBAnY2uffI1turCzg73IWuO25Eh1_ktZyAhhdSR3BxhYWJWCwqJBBJz9SExMXnRs",
-        "auth": "GK4B2qaiMgE9MhO3kILIwQ"
+    endpoint: "https://fcm.googleapis.com/fcm/send/dOx2qRwOJ0E:APA91bE3GFk50Fwhje6RzGfpCd3BXy1k8NbMY60GV5dZ9niDBaElheSBczVAmYfAkSwzIZ8xGWgou875ze2AIHcE5F1av_bT-Ibs59CerbXzy0SNHLum9NphQaMLp1OjM1OvoUzSjZ8G",
+    expirationTime: null,
+    keys: {
+        p256dh: "BEq6Uz992wXYi5mup-adfzPsBAnY2uffI1turCzg73IWuO25Eh1_ktZyAhhdSR3BxhYWJWCwqJBBJz9SExMXnRs",
+        auth: "GK4B2qaiMgE9MhO3kILIwQ"
     }
 }
 const payload = JSON.stringify({
