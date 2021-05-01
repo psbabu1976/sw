@@ -24,7 +24,7 @@
 
     }
     function send(){
-        fetch('https://localhost:3000/subscribe', {
+        fetch('http://localhost:3000/subscribe', {
                     method: 'post',
                     body: JSON.stringify({msg:document.getElementById('msg').value}),
                     headers: {
