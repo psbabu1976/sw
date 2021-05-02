@@ -24,7 +24,7 @@
 
     }
     function send(){
-        fetch('https://zealous-hopper-9f9f6a.netlify.app/subscribe', {
+        fetch('/subscribe', {
                     method: 'post',
                     body: JSON.stringify({msg:document.getElementById('msg').value}),
                     headers: {
